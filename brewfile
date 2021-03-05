@@ -2,50 +2,58 @@
 tap "AdoptOpenJDK/openjdk"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
+tap "versent/homebrew-taps"
 tap "homebrew/services"
-
+tap "datawire/blackbird"
 
 cask "osxfuse"
 
-# General
+# General Dev
+cask "adoptopenjdk/openjdk/adoptopenjdk8"
+cask "adoptopenjdk11"
+brew "groovysdk"
+brew "gradle"
 brew "go"
 brew "git" # Get a more up to date version of git than default on macOS
 brew "vault"
 brew "consul-template"
 brew "nvm"  # Node Version Manager
+brew "jsonnet" #data templating language extension of JSON
 brew "jq"
 brew "yq"
 brew "wget"
-#brew "zsh"
-brew "mas"
-brew "emacs"
+brew "hugo" # Static site generator for Armory docs
+#brew "zsh" # probably not needed since it's native
+#cask "arduino"
+
+# CLI
 brew "tree"
-brew "netcat"
-brew "nvm"
 brew "zsh-completions"
-brew "ack"
 brew "zsh-syntax-highlighting"
 brew "zsh-history-substring-search"
-brew "watch"
-brew "jfrog-cli-go"
-brew "rbenv"
-brew "ruby-build"
+brew "ack" # grep-like search tool
+brew "watch" # command line system monitors
+brew "gh" # github command line tool
+brew "bat" #better than cat
+brew "saml2aws"
+# brew "netcat" # install later if needed
+brew "jfrog-cli" # needed for armory artifactory
+# brew "rbenv" #if I ever use ruby
+# brew "ruby-build"
 brew "datawire/blackbird/telepresence"
-brew "yarn"
-brew "telnet"
-brew "groovysdk"
-brew "neovim"
-brew "jsonnet"
-brew "gnupg"
-brew "openvpn"
-brew "gh"
-brew "hugo"
-brew "fontconfig"
-brew "bat"
-brew "ripgrep"
+brew "zplug"
+# brew "yarn"
+# brew "telnet"
+# brew "neovim"
+# brew "ripgrep" #let's learn one at a time starting with ack
 
-# services
-brew "redis"
+# CLI apps
+#cask "iterm2"
+cask "kitty" #
+#cask "alacritty"
+
+# Services
+brew "redis" #maybe later
 
 # Cloud
 brew "awscli"
@@ -54,37 +62,51 @@ cask "google-cloud-sdk"
 
 # Kubernetes / Containers
 brew "kubectl"
+brew "kubectx"
+brew "minikube" #local k8s env
 brew "hyperkit"
 cask "docker"
+brew "warrensbox/tap/tfswitch" # Switch between terraform versions: https://tfswitch.warrensbox.com/Quick-Start/
+brew "kube-ps1" #helper for k8s
 
 # User applications
 cask "1password"
-cask "adoptopenjdk/openjdk/adoptopenjdk8"
-cask "adoptopenjdk11"
-cask "firefox-developer-edition"
-#cask "google-chrome"
-cask "intellij-idea"
-cask "webstorm"
-#cask "goland"
-cask "bitbar"
-cask "slack"
+#cask "slack"
+#cask "signal"
 cask "discord"
+cask "rectangle" # window management
 cask "postman"
-#cask "pocket"
-cask "sublime-text"
-cask "alfred"
 cask "dash"
 cask "cloudapp"
-cask "zoomus"
-cask "visual-studio-code"
-cask "atom"
-cask "epic-games"
-cask "steam"
-cask "docker"
-cask "spotify"
-cask "dynalist"
-cask "arduino"
+#cask "zoomus"
+brew "openvpn" #on a need to have basis
+#cask "firefox-developer-edition"
+#cask "google-chrome"
+# brew "gnupg" #GNU privacy guard (encryption)
 
-cask "iterm2"
-cask "kitty"
-#cask "alacritty"
+# brew "fontconfig" #manage fonts, maybe later
+
+
+# Editors
+cask "intellij-idea"
+#cask "webstorm"
+#cask "goland"
+#cask "atom"
+# brew "emacs" # prefer others
+#cask "sublime-text" #prefer atom over sublime text
+
+
+#cask "pocket"
+#cask "visual-studio-code" #prefer intellij or atom
+
+
+
+# Productivity
+cask "dynalist"
+brew "mas" #mac store command line helper
+cask "alfred"
+
+# Non-dev
+# cask "epic-games"
+# cask "steam"
+# cask "spotify"
